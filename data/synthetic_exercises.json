@@ -1,0 +1,54 @@
+[
+  {
+    "exercise_id": "PT-001",
+    "technique_id": "T1059.001",
+    "technique_name": "PowerShell",
+    "control_name": "Encoded PowerShell analytic",
+    "severity": "high",
+    "expected_telemetry": ["process_create", "command_line", "parent_process"],
+    "observed_telemetry": ["process_create", "command_line", "parent_process"],
+    "detection_outcome": "detected",
+    "analyst_validated": true,
+    "remediation_owner": "Detection Engineering",
+    "retest_required": false
+  },
+  {
+    "exercise_id": "PT-002",
+    "technique_id": "T1021.001",
+    "technique_name": "Remote Desktop Protocol",
+    "control_name": "Remote logon fan-out analytic",
+    "severity": "high",
+    "expected_telemetry": ["authentication", "source_ip", "destination_host", "logon_type"],
+    "observed_telemetry": ["authentication", "source_ip", "destination_host"],
+    "detection_outcome": "partial",
+    "analyst_validated": true,
+    "remediation_owner": "Security Operations",
+    "retest_required": true
+  },
+  {
+    "exercise_id": "PT-003",
+    "technique_id": "T1562.001",
+    "technique_name": "Impair Defenses",
+    "control_name": "Endpoint protection impairment analytic",
+    "severity": "critical",
+    "expected_telemetry": ["service_change", "endpoint_control_event", "actor_identity"],
+    "observed_telemetry": ["service_change"],
+    "detection_outcome": "missed",
+    "analyst_validated": false,
+    "remediation_owner": "Detection Engineering",
+    "retest_required": true
+  },
+  {
+    "exercise_id": "PT-004",
+    "technique_id": "T1098",
+    "technique_name": "Account Manipulation",
+    "control_name": "Privileged group membership analytic",
+    "severity": "medium",
+    "expected_telemetry": ["directory_audit", "target_account", "actor_identity"],
+    "observed_telemetry": ["directory_audit", "target_account", "actor_identity"],
+    "detection_outcome": "detected",
+    "analyst_validated": true,
+    "remediation_owner": "Identity Security",
+    "retest_required": false
+  }
+]
